@@ -1,3 +1,3 @@
 # Zoo Table
 
-![](../../Downloads/zoo_table.png)
+![](zoo_table.png)
