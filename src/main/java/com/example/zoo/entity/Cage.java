@@ -19,6 +19,6 @@ public class Cage {
     @OneToMany(mappedBy = "cage")
     private List<Animal> animals;
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "cages")
     private List<Worker> workers;
 }

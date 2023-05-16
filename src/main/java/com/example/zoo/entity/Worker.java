@@ -19,6 +19,11 @@ public class Worker {
     private int salary;
 
     @ManyToMany
+    @JoinTable(
+            name = "worker_cage",
+            joinColumns = @JoinColumn(name = "worker_id"),
+            inverseJoinColumns = @JoinColumn(name = "cage_id")
+    )
     private List<Cage> cages;
 
 }
