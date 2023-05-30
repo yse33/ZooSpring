@@ -1,5 +1,6 @@
 package com.example.zoo.entity;
 
+import com.fasterxml.jackson.annotation.JacksonInject;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -25,5 +26,4 @@ public class Worker {
             inverseJoinColumns = @JoinColumn(name = "cage_id")
     )
     private List<Cage> cages;
-
 }

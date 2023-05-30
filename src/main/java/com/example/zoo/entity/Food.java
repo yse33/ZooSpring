@@ -16,6 +16,6 @@ public class Food {
 
     private int amount;
 
-    @OneToMany(mappedBy = "favourite_food")
+    @OneToMany(mappedBy = "food")
     private List<Animal> animals;
 }

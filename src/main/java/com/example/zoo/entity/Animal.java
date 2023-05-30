@@ -22,6 +22,5 @@ public class Animal {
     private Cage cage;
 
     @ManyToOne
-    private Food favourite_food;
-
+    private Food food;
 }
