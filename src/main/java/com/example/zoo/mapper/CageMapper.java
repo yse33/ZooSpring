@@ -7,7 +7,7 @@ import org.mapstruct.factory.Mappers;
 
 import java.util.List;
 
-@Mapper(uses = {AnimalMapper.class, FoodMapper.class})
+@Mapper(uses = {AnimalMapper.class})
 public interface CageMapper {
     CageMapper CAGE_MAPPER = Mappers.getMapper(CageMapper.class);
 

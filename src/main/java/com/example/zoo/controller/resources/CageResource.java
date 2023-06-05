@@ -15,6 +15,4 @@ public class CageResource {
     private int capacity;
 
     private List<AnimalResource> animals;
-
-    private List<WorkerResource> workers;
 }

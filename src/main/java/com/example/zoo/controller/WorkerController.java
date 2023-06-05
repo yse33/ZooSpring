@@ -1,17 +1,17 @@
 package com.example.zoo.controller;
 
-import com.example.zoo.controller.resources.AnimalResource;
-import com.example.zoo.service.AnimalService;
+import com.example.zoo.controller.resources.WorkerResource;
+import com.example.zoo.service.WorkerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
-@RequestMapping("/api/v1/animals")
+@RequestMapping("/api/v1/workers")
 @RequiredArgsConstructor
-public class AnimalController {
-    private final AnimalService service;
+public class WorkerController {
+    private final WorkerService service;
 
     @GetMapping
     public ResponseEntity<?> getAll() {
@@ -24,8 +24,8 @@ public class AnimalController {
     }
 
     @PostMapping
-    public ResponseEntity<?> create(@RequestBody AnimalResource resource) {
-        AnimalResource saved = service.save(resource);
+    public ResponseEntity<?> create(@RequestBody WorkerResource resource) {
+        WorkerResource saved = service.save(resource);
 
         return ResponseEntity.created(
                 UriComponentsBuilder.fromPath("/api/v1/animals/{id}")
@@ -35,7 +35,7 @@ public class AnimalController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> update(@PathVariable long id, @RequestBody AnimalResource resource) {
+    public ResponseEntity<?> update(@PathVariable long id, @RequestBody WorkerResource resource) {
         return ResponseEntity.ok(service.update(resource, id));
     }
 
