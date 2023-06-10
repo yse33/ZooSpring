@@ -2,8 +2,6 @@ package com.example.zoo.service.impl;
 
 import com.example.zoo.controller.resources.AnimalResource;
 import com.example.zoo.entity.Animal;
-import com.example.zoo.entity.Cage;
-import com.example.zoo.entity.Food;
 import com.example.zoo.repository.AnimalRepository;
 import com.example.zoo.repository.CageRepository;
 import com.example.zoo.repository.FoodRepository;
@@ -65,16 +63,6 @@ public class AnimalServiceImpl implements AnimalService {
 
     @Override
     public void delete(long id) {
-        Animal animal = animalRepository.getReferenceById(id);
-
-        Cage cage = animal.getCage();
-        cage.getAnimals().remove(animal);
-        cageRepository.save(cage);
-
-        Food food = animal.getFood();
-        food.getAnimals().remove(animal);
-        foodRepository.save(food);
-
         animalRepository.deleteById(id);
     }
 

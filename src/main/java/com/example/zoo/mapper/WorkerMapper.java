@@ -11,7 +11,7 @@ import java.util.List;
 public interface WorkerMapper {
     WorkerMapper WORKER_MAPPER = Mappers.getMapper(WorkerMapper.class);
 
-    Worker fromWorkerResource(WorkerResource foodResource);
+    Worker fromWorkerResource(WorkerResource workerResource);
 
     WorkerResource toWorkerResource(Worker food);
 

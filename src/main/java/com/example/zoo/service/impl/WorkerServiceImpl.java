@@ -1,5 +1,6 @@
 package com.example.zoo.service.impl;
 
+import com.example.zoo.controller.resources.CageResource;
 import com.example.zoo.controller.resources.WorkerResource;
 import com.example.zoo.entity.Worker;
 import com.example.zoo.repository.CageRepository;
@@ -31,7 +32,7 @@ public class WorkerServiceImpl implements WorkerService {
     @Override
     public WorkerResource save(WorkerResource resource) {
         Worker worker = WORKER_MAPPER.fromWorkerResource(resource);
-        worker.setCages(null);
+        worker.setCages(cageRepository.findAllById(resource.getCages().stream().map(CageResource::getId).toList()));
 
         return WORKER_MAPPER.toWorkerResource(workerRepository.save(worker));
     }
@@ -42,6 +43,7 @@ public class WorkerServiceImpl implements WorkerService {
         toUpdate.setName(resource.getName());
         toUpdate.setAge(resource.getAge());
         toUpdate.setSalary(resource.getSalary());
+        toUpdate.setCages(cageRepository.findAllById(resource.getCages().stream().map(CageResource::getId).toList()));
 
         return WORKER_MAPPER.toWorkerResource(workerRepository.save(toUpdate));
     }

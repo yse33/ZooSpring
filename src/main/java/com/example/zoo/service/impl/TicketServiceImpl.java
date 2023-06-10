@@ -3,7 +3,6 @@ package com.example.zoo.service.impl;
 
 import com.example.zoo.controller.resources.TicketResource;
 import com.example.zoo.entity.Ticket;
-import com.example.zoo.entity.Visitor;
 import com.example.zoo.repository.TicketRepository;
 import com.example.zoo.repository.VisitorRepository;
 import com.example.zoo.service.TicketService;
@@ -55,12 +54,6 @@ public class TicketServiceImpl implements TicketService {
 
     @Override
     public void delete(long id) {
-        Ticket ticket = ticketRepository.getReferenceById(id);
-
-        Visitor visitor = ticket.getVisitor();
-        visitor.getTickets().remove(ticket);
-        visitorRepository.save(visitor);
-
         ticketRepository.deleteById(id);
     }
 }

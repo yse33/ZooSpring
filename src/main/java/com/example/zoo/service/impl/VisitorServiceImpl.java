@@ -1,6 +1,7 @@
 package com.example.zoo.service.impl;
 
 import com.example.zoo.controller.resources.VisitorResource;
+import com.example.zoo.entity.Ticket;
 import com.example.zoo.entity.Visitor;
 import com.example.zoo.repository.TicketRepository;
 import com.example.zoo.repository.VisitorRepository;
@@ -48,12 +49,10 @@ public class VisitorServiceImpl implements VisitorService {
 
     @Override
     public void delete(long id) {
-        ticketRepository.findAllByVisitorId(id).forEach(this::removeTicket);
+        List<Ticket> ticketsToDelete = ticketRepository.findAllByVisitorId(id);
+        ticketRepository.deleteAll(ticketsToDelete);
+
         visitorRepository.deleteById(id);
     }
 
-    public void removeTicket(Visitor visitor) {
-        visitor.setTickets(null);
-        visitorRepository.save(visitor);
-    }
 }
