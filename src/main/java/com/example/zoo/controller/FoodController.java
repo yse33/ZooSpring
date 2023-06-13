@@ -46,4 +46,9 @@ public class FoodController {
         return ResponseEntity.noContent().build();
     }
 
+    @GetMapping("/{id}/audits")
+    public ResponseEntity<?> findAllAudits(@PathVariable long id) {
+        return ResponseEntity.ok(service.findAllAudits(id));
+    }
+
 }

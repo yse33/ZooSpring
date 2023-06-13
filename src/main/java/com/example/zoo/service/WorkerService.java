@@ -14,4 +14,8 @@ public interface WorkerService {
     WorkerResource update(WorkerResource worker, long id);
 
     void delete(long id);
+
+    List<WorkerResource> findAllAudits(long id);
+
+    List<Object> findAllAuditsUntilDate(String date);
 }

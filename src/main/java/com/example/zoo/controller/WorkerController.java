@@ -23,6 +23,16 @@ public class WorkerController {
         return ResponseEntity.ok(service.getById(id));
     }
 
+    @GetMapping("/{id}/audits")
+    public ResponseEntity<?> findAllAudits(@PathVariable long id) {
+        return ResponseEntity.ok(service.findAllAudits(id));
+    }
+
+    @GetMapping("/date")
+    public ResponseEntity<?> findAllAuditsUntilDate(@RequestParam String date) {
+        return ResponseEntity.ok(service.findAllAuditsUntilDate(date));
+    }
+
     @PostMapping
     public ResponseEntity<?> create(@RequestBody WorkerResource resource) {
         WorkerResource saved = service.save(resource);

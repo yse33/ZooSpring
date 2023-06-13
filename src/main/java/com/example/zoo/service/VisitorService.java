@@ -14,4 +14,8 @@ public interface VisitorService {
     VisitorResource update(VisitorResource visitor, long id);
 
     void delete(long id);
+
+    List<VisitorResource> findAllAudits(long id);
+
+    List<VisitorResource> findAllVisitorsByYear(int year);
 }

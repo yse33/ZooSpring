@@ -23,6 +23,26 @@ public class AnimalController {
         return ResponseEntity.ok(service.getById(id));
     }
 
+    @GetMapping("/{id}/audits")
+    public ResponseEntity<?> findAllAudits(@PathVariable long id) {
+        return ResponseEntity.ok(service.findAllAudits(id));
+    }
+
+    @GetMapping("/species/{species}")
+    public ResponseEntity<?> findAllAnimalsBySpecies(@PathVariable String species) {
+        return ResponseEntity.ok(service.findAllAnimalsBySpecies(species));
+    }
+
+    @GetMapping("/food/{food}")
+    public ResponseEntity<?> findAllAnimalsByFood(@PathVariable String food) {
+        return ResponseEntity.ok(service.findAllAnimalsByFood(food));
+    }
+
+    @GetMapping("/cage/{cage}")
+    public ResponseEntity<?> findAllAnimalsByCage(@PathVariable String cage) {
+        return ResponseEntity.ok(service.findAllAnimalsByCage(cage));
+    }
+
     @PostMapping
     public ResponseEntity<?> create(@RequestBody AnimalResource resource) {
         AnimalResource saved = service.save(resource);

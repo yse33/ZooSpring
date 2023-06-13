@@ -2,11 +2,15 @@ package com.example.zoo.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.envers.Audited;
 
 import java.util.List;
 
+import static org.hibernate.envers.RelationTargetAuditMode.NOT_AUDITED;
+
 @Entity
 @Data
+@Audited(targetAuditMode = NOT_AUDITED)
 public class Cage {
     @Id
     @GeneratedValue

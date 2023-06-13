@@ -14,4 +14,12 @@ public interface AnimalService {
     AnimalResource update(AnimalResource animal, long id);
 
     void delete(long id);
+
+    List<AnimalResource> findAllAudits(long id);
+
+    List<AnimalResource> findAllAnimalsBySpecies(String species);
+
+    List<AnimalResource> findAllAnimalsByFood(String food);
+
+    List<AnimalResource> findAllAnimalsByCage(String cage);
 }

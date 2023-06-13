@@ -23,6 +23,16 @@ public class VisitorController {
         return ResponseEntity.ok(service.getById(id));
     }
 
+    @GetMapping("/{id}/audits")
+    public ResponseEntity<?> findAllAudits(@PathVariable long id) {
+        return ResponseEntity.ok(service.findAllAudits(id));
+    }
+
+    @GetMapping("/year/{year}")
+    public ResponseEntity<?> findAllVisitorsByYear(@PathVariable int year) {
+        return ResponseEntity.ok(service.findAllVisitorsByYear(year));
+    }
+
     @PostMapping
     public ResponseEntity<?> create(@RequestBody VisitorResource resource) {
         VisitorResource saved = service.save(resource);

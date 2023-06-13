@@ -14,4 +14,6 @@ public interface FoodService {
     FoodResource update(FoodResource food, long id);
 
     void delete(long id);
+
+    List<FoodResource> findAllAudits(long id);
 }

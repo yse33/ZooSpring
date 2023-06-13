@@ -12,4 +12,6 @@ public interface AnimalRepository extends JpaRepository<Animal, Long> {
     List<Animal> findAllByCageId(long cageId);
 
     List<Animal> findAllByFoodId(long foodId);
+
+    List<Animal> findAllBySpecies(String species);
 }
