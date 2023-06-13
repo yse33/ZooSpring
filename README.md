@@ -44,7 +44,6 @@ git clone https://github.com/yse33/ZooSpring.git
 3. Свързване на базата данни с проекта във файла application.properties
 4. Създаване на Spring Web App в Microsoft Azure
 5. Deploy-ване на проекта в Microsoft Azure
-
 ## Използвани технологии
 
 * [Java](https://www.java.com/en/)
